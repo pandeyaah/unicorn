@@ -15,10 +15,10 @@ def evaluate_image(img) -> str:
 
 def load_model():
 	path = '/floyd/home'
-	classes = ['eosinophil', 'lymphocyte', 'monocyte', 'neutrophil']
-	data = ImageDataBunch.single_from_classes(path, classes, tfms=get_transforms(), size=200).normalize(imagenet_stats)
-	learn = create_cnn(data, models.resnet50)
-	learn.load('stage-5')
+	classes = ['notunicorn', 'unicorn']
+	data = ImageDataBunch.single_from_classes(path, classes, tfms=get_transforms(), size=224r).normalize(imagenet_stats)
+	learn = create_cnn(data, models.resnet34)
+	learn.load(''unicorn-stage-2')
 	return learn
 
 app = Flask(__name__)
