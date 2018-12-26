@@ -18,7 +18,7 @@ def load_model():
 	classes = ['notunicorn', 'unicorn']
 	data = ImageDataBunch.single_from_classes(path, classes, tfms=get_transforms(), size=224).normalize(imagenet_stats)
 	learn = create_cnn(data, models.resnet34)
-	learn.load(''unicorn-stage-2')
+	learn.load('unicorn-stage-2')
 	return learn
 
 app = Flask(__name__)
